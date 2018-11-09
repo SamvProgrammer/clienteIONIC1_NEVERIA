@@ -1,18 +1,16 @@
-<ion-view title="Menú de productos" id="page6">
+<ion-view   title="Menú de productos" id="page6" ng-controller="menDeProductosCtrl">
   <ion-content padding="true" class="has-header">
+    
     <ion-list id="menDeProductos-list8">
-      <ion-item class="item-thumbnail-left item-icon-right" id="menDeProductos-list-item12" ui-sref="tabsController.descripciNDelProducto()">
-        <img src="img/IRdQLRsRKOnSRMZqtslj_cono1.jpg">
-        <h2>Cono de nieve</h2>
-        <p>$17.00</p>
-        <i class="icon ion-android-add-circle"></i>
-      </ion-item>
-      <ion-item class="item-thumbnail-left item-icon-right" id="menDeProductos-list-item13" ui-sref="tabsController.descripciNDelProducto()">
+      <ion-item ng-repeat="i in arreglo" ng-click="oprime(i.id);" class="item-thumbnail-left item-icon-right" id="menDeProductos-list-item12" >
         <img src="img/cqT6eZd2SlmICVzTrQqa_torta1.jpg">
-        <h2>Torta de nieve</h2>
-        <p>$20.00</p>
+        <h2>{{i.nombre}}</h2>
+        <p>{{i.precio | currency:undefined:2}}</p>
         <i class="icon ion-android-add-circle"></i>
       </ion-item>
     </ion-list>
+    <button class="button button-full button-calm" ng-click="clickBoton();">
+      Ingresar nuevo
+    </button>
   </ion-content>
 </ion-view>

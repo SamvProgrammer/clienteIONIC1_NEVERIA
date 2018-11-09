@@ -1,4 +1,4 @@
-<ion-view title="Menú de opciones" id="page2" style="background-color:#FFFFFF;">
+<ion-view  title="Menú de opciones" id="page2" style="background-color:#FFFFFF;" ng-controller="menDeOpcionesCtrl">
   <ion-content padding="false" class="has-header">
     <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1" id="menDeOpciones-slider1" style="width:100%;height:200px;">
       <ion-slide-page id="menDeOpciones-slide25" style="background:url(&quot;img/Ftomm5gcRxCUorKqa482_images.jpg&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
@@ -6,7 +6,7 @@
       <ion-slide-page id="menDeOpciones-slide26" style="background:url(&quot;img/Xb6a7i7qSyONVq35YJEy_412.jpg&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
     </ion-slides>
     <ion-list  id="menDeOpciones-list5">
-      <ion-item class="item-thumbnail-left" id="menDeOpciones-list-item11" ui-sref="tabsController.menDeProductos()">
+      <ion-item class="item-thumbnail-left" id="menDeOpciones-list-item11" ng-click="opciones();">
         <img src="img/pwaXXeKjSz1OJGMXx6oQ_60203693-placa-con-el-plato-de-tenedores-y-cuchillos-iconos-jefe-signo-sombrero-smbolo-de-la-cuchillera-en-cruz.jpg">
         <h2>Menú</h2>
         <p>Elegir menú</p>

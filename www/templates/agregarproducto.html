@@ -1,0 +1,33 @@
+<ion-view  title="Agregar producto nuevo" id="agregarproducto" ng-controller="agregarproductoCtrl">
+    <ion-content padding="true" class="has-header">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Nombre
+          </span>
+          <input type="text" placeholder="Ingresar nombre" ng-model = "nombre" >
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Descripción</span>
+          <input type="text" placeholder="Ingresar descripción" ng-model = "descripcion" >
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Precio</span>
+          <input type="number" placeholder="Ingresar precio" ng-model = "precio" >
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Ruta imagen</span>
+          <input type="file" placeholder="Ingresar ruta imagen" ng-model = "imagen" >
+        </label>
+      </div>   
+      <div ng-if="visible" class="bar-assertive" style="background-color: rgb(197, 34, 34);border: 1px solid rgb(197, 34, 34);
+      outline: 5px solid rgb(197, 34, 34);">
+        <h5 class="title" style="color: white;text-align: center;">{{valortexto}}</h5>
+      </div>  
+      <button  class="button button-full button-calm" ng-click="clickBoton(nombre,descripcion,precio);">
+        {{nombreboton}}
+      </button> 
+      <button  class="button button-full button-assertive" ng-click="regresar();">
+          Regresar
+        </button> 
+    </ion-content>
+  </ion-view>

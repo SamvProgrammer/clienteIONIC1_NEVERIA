@@ -11,6 +11,7 @@ angular.module('app.routes', [])
 
       .state('tabsController.menDeOpciones', {
     url: '/page2',
+    cache:false,
     views: {
       'tab1': {
         templateUrl: 'templates/menDeOpciones.html',
@@ -21,6 +22,7 @@ angular.module('app.routes', [])
 
   .state('tabsController.pedidosHechos', {
     url: '/page3',
+    cache:false,
     views: {
       'tab2': {
         templateUrl: 'templates/pedidosHechos.html',
@@ -31,6 +33,7 @@ angular.module('app.routes', [])
 
   .state('tabsController.historial', {
     url: '/page4',
+    cache:false,
     views: {
       'tab3': {
         templateUrl: 'templates/historial.html',
@@ -41,12 +44,15 @@ angular.module('app.routes', [])
 
   .state('tabsController', {
     url: '/page1',
+    cache:false,
     templateUrl: 'templates/tabsController.html',
+    controller:'opcionestabctrl',
     abstract:true
   })
 
   .state('tabsController.menDeProductos', {
     url: '/productos',
+    cache:false,
     views: {
       'tab1': {
         templateUrl: 'templates/menDeProductos.html',
@@ -57,10 +63,21 @@ angular.module('app.routes', [])
 
   .state('tabsController.descripciNDelProducto', {
     url: '/descripcion',
+    cache:false,
     views: {
       'tab1': {
         templateUrl: 'templates/descripciNDelProducto.html',
         controller: 'descripciNDelProductoCtrl'
+      }
+    }
+  })
+  .state('tabsController.agregarproducto', {
+    url: '/agregarproducto/{parametro:json}',
+    cache:false,
+    views: {
+      'tab1': {
+        templateUrl: 'templates/agregarproducto.html',
+        controller: 'agregarproductoCtrl'
       }
     }
   })
