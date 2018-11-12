@@ -81,6 +81,16 @@ angular.module('app.routes', [])
       }
     }
   })
+  .state('tabsController.agregarventacliente', {
+    url: '/agregarventacliente/{parametro:json}',
+    cache:false,
+    views: {
+      'tab1': {
+        templateUrl: 'templates/agregarventacliente.html',
+        controller: 'agregarventaclienteCtrl'
+      }
+    }
+  })
 
 $urlRouterProvider.otherwise('/page1/page2')
 

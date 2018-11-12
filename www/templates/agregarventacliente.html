@@ -1,0 +1,22 @@
+<ion-view title="Agregar producto nuevo" id="agregarventacliente" ng-controller="agregarventaclienteCtrl">
+    <ion-content padding="true" class="has-header">
+        <div class="list">
+
+            <label class="item item-input item-select">
+              <div class="input-label">
+                Seleccionar mesa
+              </div>
+              <select ng-model="seleccion">
+                <option ng-repeat="i in arreglo" value="{{i.id}}">{{i.descripcion}}</option>
+              </select>
+            </label>
+          
+          </div>
+        <button class="button button-full button-calm" ng-click="agregar(seleccion);">
+            {{nombreboton}}
+        </button>
+        <button class="button button-full button-assertive" ng-click="regresar();">
+            Regresar
+        </button>
+    </ion-content>
+</ion-view>

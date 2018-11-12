@@ -23,11 +23,23 @@ function ($scope, $stateParams,$state) {
 
 }])
    
-.controller('pedidosHechosCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('pedidosHechosCtrl', ['$scope', '$stateParams','$http','$ionicPopup','$state', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+function ($scope, $stateParams,$http,$ionicPopup,$state) {
 
+    $scope.arreglo = [];
+    $http.get(direccionip+"/ventas/clienteventas")
+    .then(function(response) {
+        $scope.arreglo=response.data;
+    });
+
+     $scope.clickBoton = function(){
+        $state.transitionTo("tabsController.agregarventacliente",{parametro:{'insertar':true}},{
+            reload: true,
+            notify: true
+        }); 
+     };
 
 }])
    
@@ -282,6 +294,37 @@ function ($scope, $stateParams,$state) {
             reload: true,
             notify: true
         });
+    };
+
+}])
+
+.controller('agregarventaclienteCtrl', ['$scope', '$stateParams','$state','$http', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams,$state,$http) {
+    var parametro =  $stateParams.parametro;
+    $scope.arreglo = [];
+    $scope.seleccion;
+    $http.get(direccionip+"/catalogos/mesas")
+    .then(function(response) {
+        $scope.arreglo=response.data;
+    });
+
+
+    if(parametro.insertar){
+        $scope.nombreboton ="Insertar producto";        
+    }
+
+    $scope.regresar = function(){
+        $state.transitionTo("tabsController.pedidosHechos",{},{
+            reload: true,
+            notify: true
+        });
+    };
+
+    $scope.agregar = function(agergar){
+
+        alert(agergar);
     };
 
 }])
