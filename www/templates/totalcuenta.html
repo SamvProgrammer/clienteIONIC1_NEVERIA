@@ -1,0 +1,46 @@
+<ion-view title="Total cuenta" id="page4" ng-controller="totalcuentaCtrl">
+    <ion-content padding="true" class="has-header">
+        <div class="row" style="background-color: rgb(189, 189, 189)">
+            <div class="col text-center">
+                <strong>
+                    <h3>Total de la cuenta</h3>
+                </strong>
+            </div>
+        </div>
+        <div class="row" style="background-color: rgb(238, 238, 238)">
+            <div class="col col-40"><strong>Descripción</strong></div>
+            <div class="col col-15 text-center"><strong>Cantidad</strong></div>
+            <div class="col col-15 text-center"><strong>Unidad</strong></div>
+            <div class="col col"><strong>Total</strong></div>
+        </div>
+        <div class="row" ng-repeat="i in arreglo">
+            <div class="col col-40">
+                <strong>{{i.nombre}}</strong>
+            </div>
+            <div class="col col-15 text-center">
+                    <strong>{{i.cantidad}}</strong>
+            </div>
+            <div class="col col-15 text-center">
+                    <strong>{{i.precio | currency:undefined:2}}</strong>
+            </div>
+            <div class="col">
+                <strong>{{i.precio*i.cantidad| currency:undefined:2}}</strong>
+            </div>
+            <div ng-init="$parent.total = $parent.total + (i.precio*i.cantidad)"></div>
+        </div>
+        <div class="row" style="background-color: rgb(189, 189, 189)">
+            <div class="col col-80 text-right">
+                <strong>TOTAL A PAGAR:</strong>
+            </div>
+            <div class="col">
+                <strong>{{total | currency:undefined:2}}</strong>
+            </div>
+        </div>
+        <button class="button button-full button-calm" ng-click="realizarcobro(total);">
+            Realizar cobro
+        </button>
+        <button class="button button-full button-assertive" ng-click="regresar();">
+            regresar
+        </button>
+    </ion-content>
+</ion-view>

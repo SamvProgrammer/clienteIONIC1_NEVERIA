@@ -6,10 +6,10 @@
         <ion-slide-page id="menDeOpciones-slide26" style="background:url(&quot;img/Xb6a7i7qSyONVq35YJEy_412.jpg&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
       </ion-slides>
       <ion-list  id="menDeOpciones-list5">
-        <ion-item ng-repeat="i in arreglo" class="item-thumbnail-left" id="menDeOpciones-list-item11" >
+        <ion-item ng-repeat="i in arreglo" ng-click="oprime(i.id)" class="item-thumbnail-left" id="menDeOpciones-list-item11" >
           <img src="img/pwaXXeKjSz1OJGMXx6oQ_60203693-placa-con-el-plato-de-tenedores-y-cuchillos-iconos-jefe-signo-sombrero-smbolo-de-la-cuchillera-en-cruz.jpg">
-          <h2>Folio:{{i.id}}</h2>
-          <p>Mesa: {{i.id_mesa}}</p>
+          <h2>Mesa:{{i.id_mesa}}</h2>
+          <p>Folio: {{i.id}}</p>
         </ion-item>
       </ion-list>
       <button class="button button-full button-calm" ng-click="clickBoton();">

@@ -85,9 +85,29 @@ angular.module('app.routes', [])
     url: '/agregarventacliente/{parametro:json}',
     cache:false,
     views: {
-      'tab1': {
+      'tab2': {
         templateUrl: 'templates/agregarventacliente.html',
         controller: 'agregarventaclienteCtrl'
+      }
+    }
+  })
+  .state('tabsController.agregarProductosCuenta', {
+    url: '/agregarProductosCuenta/{parametro:json}',
+    cache:false,
+    views: {
+      'tab2': {
+        templateUrl: 'templates/productosCuenta.html',
+        controller: 'agregarProductosCuentaCtrl'
+      }
+    }
+  })
+  .state('tabsController.totalcuenta', {
+    url: '/totalcuenta/{parametro:json}',
+    cache:false,
+    views: {
+      'tab2': {
+        templateUrl: 'templates/totalcuenta.html',
+        controller: 'totalcuentaCtrl'
       }
     }
   })

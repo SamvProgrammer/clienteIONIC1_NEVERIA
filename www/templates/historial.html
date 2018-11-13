@@ -1,3 +1,27 @@
-<ion-view  title="Historial" id="page4">
-  <ion-content padding="true" class="has-header"></ion-content>
+<ion-view title="Historial" id="page4" ng-controller="historialCtrl">
+    <ion-content padding="true" class="has-header">
+        <div class="row" style="background-color: rgb(189, 189, 189)">
+            <div class="col text-center">
+                <strong>
+                    <h3>Historial de cuentas</h3>
+                </strong>
+            </div>
+        </div>
+        <div class="row" style="background-color: rgb(238, 238, 238)">
+            <div class="col"><strong>Folio</strong></div>
+            <div class="col "><strong>Fecha cobro</strong></div>
+            <div class="col "><strong>Total de compra</strong></div>
+        </div>
+        <div class="row" ng-repeat="i in arreglo">
+            <div class="col">
+                <strong>{{i.id}}</strong>
+            </div>
+            <div class="col">
+                    <strong>{{i.fecha_venta}}</strong>
+            </div>
+            <div class="col">
+                    <strong>{{i.total | currency:undefined:2}}</strong>
+            </div>
+          </div>
+    </ion-content>
 </ion-view>

@@ -1,0 +1,16 @@
+<ion-view   title="Menú de productos" id="page6" ng-controller="agregarProductosCuentaCtrl">
+    <ion-content padding="true" class="has-header">
+      
+      <ion-list id="menDeProductos-list8">
+        <ion-item ng-repeat="i in arreglo" ng-click="oprime(i.id);" class="item-thumbnail-left item-icon-right" id="menDeProductos-list-item12" >
+          <img src="img/cqT6eZd2SlmICVzTrQqa_torta1.jpg">
+          <h2>{{i.nombre}}</h2>
+          <p>{{i.precio | currency:undefined:2}}</p>
+          <i class="icon ion-android-add-circle"></i>
+        </ion-item>
+      </ion-list>
+      <button class="button button-full button-assertive" ng-click="regresar();">
+        regresar
+      </button>
+    </ion-content>
+  </ion-view>
